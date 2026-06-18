@@ -1,0 +1,25 @@
+[project]
+name = "excuse-manager"
+version = "0.1.0"
+description = "This service can help you to make an excuse for your boss, friend, wife, and so on!!"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "dotenv>=0.9.9",
+    "google-genai>=2.8.0",
+]
+
+[project.scripts]
+project = "main:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
