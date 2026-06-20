@@ -34,6 +34,10 @@ def generate_with_retry(prompt, max_retries=4):
             print("Server is full. retying!!")
             sleep(delay)
             delay *= 2
+        except genai.errors.ClientError as e:
+            if '429' in e:
+                print('Sorry, too many requests!')
+                break
     else:
         print("Server is very full, sorry!")
 
