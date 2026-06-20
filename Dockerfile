@@ -8,4 +8,4 @@ RUN uv sync --frozen --no-install-project
 
 COPY . .
 
-CMD ["uv", "run", "project"]
+CMD ["uv", "run", "python", "src/app.py"]

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Excuse-manager{% endblock %}
+
+{% block content %}
+<main class="page">
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header__title">Excuse-manager</h1>
+            <p class="header__subtitle">Генератор отговорок на базе ИИ</p>
+        </header>
+
+        <!-- Response area (hidden until there's a response) -->
+        <section id="response-area" class="response-area hidden" aria-live="polite">
+            <p id="response-text" class="response-area__text"></p>
+        </section>
+
+        <!-- Loading indicator -->
+        <div id="loading" class="loading hidden" aria-label="Загрузка">
+            <span class="loading__dot"></span>
+            <span class="loading__dot"></span>
+            <span class="loading__dot"></span>
+        </div>
+
+        <!-- Error message -->
+        <p id="error-message" class="error-message hidden" role="alert"></p>
+
+        <!-- Input form -->
+        <form id="chat-form" class="input-group" autocomplete="off">
+            <input
+                id="message-input"
+                class="input-group__field"
+                type="text"
+                placeholder="Опишите ситуацию..."
+                required
+                aria-label="Введите ваш запрос"
+            >
+            <button
+                id="send-button"
+                class="input-group__button"
+                type="submit"
+            >
+                Отправить
+            </button>
+        </form>
+
+    </div>
+</main>
+{% endblock %}
